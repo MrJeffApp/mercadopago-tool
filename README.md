@@ -1,2 +1,2 @@
 # mercadopago-tool
-Mercado Pago Tool: https://mrjeffapp.github.io/mercadopago-tool/
+MercadoPago card token generator: https://mrjeffapp.github.io/mercadopago-tool/
