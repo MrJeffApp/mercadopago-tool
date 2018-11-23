@@ -11,7 +11,7 @@
             <el-row type="flex" justify="center">
                 <el-col :span="6">
                     <PublicKeyForm v-show="showTokenForm" v-on:publicKey="onToken"/>
-                    <CardForm v-show="showCardForm"/>
+                    <CardForm v-if="showCardForm" :publicToken="publicToken"/>
                 </el-col>
             </el-row>
         </el-main>
