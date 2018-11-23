@@ -10,7 +10,8 @@ import {
     FormItem,
     Input,
     DatePicker,
-    Select
+    Select,
+    Option
 } from 'element-ui'
 
 import lang from 'element-ui/lib/locale/lang/en'
@@ -29,3 +30,4 @@ Vue.use(FormItem)
 Vue.use(Input)
 Vue.use(DatePicker)
 Vue.use(Select)
+Vue.use(Option)

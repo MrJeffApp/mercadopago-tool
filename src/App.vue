@@ -10,7 +10,7 @@
         <el-main>
             <el-row type="flex" justify="center">
                 <el-col :span="6">
-                    <PublicKeyForm v-show="showTokenForm" v-on:publicKey="onToken"/>
+                    <PublicKeyForm v-on:publicKey="onToken"/>
                     <CardForm v-if="showCardForm" :publicToken="publicToken"/>
                 </el-col>
             </el-row>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+    import stringUtils from 'voca';
     import PublicKeyForm from './components/PublicKeyForm.vue'
     import CardForm from './components/CardForm.vue'
 
@@ -30,16 +31,17 @@
         },
         data() {
             return {
-                showTokenForm: true,
-                publicToken: null,
-                showCardForm: true,
+                publicToken: null
             };
+        },
+        computed: {
+            showCardForm() {
+                return !stringUtils.isBlank(this.publicToken);
+            }
         },
         methods: {
             onToken(token) {
                 this.publicToken = token;
-                this.showTokenForm = false;
-                this.showCardForm = true;
             }
         }
     }
